@@ -14,4 +14,9 @@ SERVICE_KEY=${SERVICE_KEY:-service0}
 read -p "Enter Beancounter service pass: " SERVICE_PASS
 SERVICE_PASS=${SERVICE_PASS:-service0pass}
 
-./scripts/create-service-account.sh
+RANCHER_URL=${RANCHER_URL} \
+    USER_KEY=${USER_KEY} \
+    USER_PASS=${USER_PASS} \
+    SERVICE_KEY=${SERVICE_KEY} \
+    SERVICE_PASS=${SERVICE_PASS} \
+    ./scripts/create-service-account.sh
