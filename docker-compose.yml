@@ -5,7 +5,7 @@ rancher:
   environment:
     - DEFAULT_CATTLE_CATALOG_URL=library=https://github.com/niusmallnan/rancher-catalog.git
     - JAVA_OPTS="-Xmx${xmx}"
-  command: 
+  command:
     - --db-host hna-caas-product-mysql.cc8fqrm5ebkq.rds.cn-north-1.amazonaws.com.cn
     - --db-user hnacaas
     - --db-pass hnacloudos
@@ -17,7 +17,7 @@ beancounter-server:
   extra_hosts:
     - "postgres:hna-caas-product-postgresql.cc8fqrm5ebkq.rds.cn-north-1.amazonaws.com.cn
 "
-    - "influxdb:xxxxx"
+    - "influxdb:${influxdb}"
   environment:
     - CATTLE_URL=http://internal-hna-caas-product-rancher-lb-1754718600.cn-north-1.elb.amazonaws.com.cn:8082
     - CATTLE_ACCESS_KEY=service0
