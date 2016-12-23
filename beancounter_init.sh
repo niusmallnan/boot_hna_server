@@ -1,5 +1,6 @@
 #!/bin/bash
 #set -ex
+apt-get install jq
 
 read -p "Enter Rancher url: " RANCHER_URL
 RANCHER_URL=${RANCHER_URL:-http://localhost:8082}
