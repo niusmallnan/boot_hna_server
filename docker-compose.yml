@@ -15,8 +15,7 @@ beancounter-server:
   image: imikushin/beancounter:v0.3.8
   command: [beancounter, server]
   extra_hosts:
-    - "postgres:hna-caas-product-postgresql.cc8fqrm5ebkq.rds.cn-north-1.amazonaws.com.cn
-"
+    - "postgres:hna-caas-product-postgresql.cc8fqrm5ebkq.rds.cn-north-1.amazonaws.com.cn"
     - "influxdb:${influxdb}"
   environment:
     - CATTLE_URL=http://internal-hna-caas-product-rancher-lb-1754718600.cn-north-1.elb.amazonaws.com.cn:8082

@@ -1,4 +1,5 @@
-
+#!/bin/bash
+set -ex
 
 docker run -d --restart=unless-stopped \
 	-e DEFAULT_CATTLE_CATALOG_URL=library=https://github.com/niusmallnan/rancher-catalog.git \

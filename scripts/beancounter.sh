@@ -1,4 +1,5 @@
-
+#!/bin/bash
+set -ex
 
 docker run -d --restart=unless-stopped \
 	-e CATTLE_URL=http://internal-hna-caas-product-rancher-lb-1754718600.cn-north-1.elb.amazonaws.com.cn:8082
