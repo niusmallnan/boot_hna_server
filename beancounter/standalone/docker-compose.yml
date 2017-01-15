@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  beancounter-server:
+    image: ${beancounter_img}
+    command: [beancounter, server]
+    extra_hosts:
+    - "postgres:${postgres}"
+    - "influxdb:${influxdb}"
+    environment:
+    - CATTLE_URL=${cattle_url}
+    - CATTLE_ACCESS_KEY=${service_account}
+    - CATTLE_SECRET_KEY=${service_pass}
