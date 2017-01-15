@@ -20,4 +20,4 @@ RANCHER_URL=${RANCHER_URL} \
     USER_PASS=${USER_PASS} \
     SERVICE_KEY=${SERVICE_KEY} \
     SERVICE_PASS=${SERVICE_PASS} \
-    ./scripts/create-service-account.sh
+    ./create-service-account.sh

@@ -1,0 +1,15 @@
+rancher:
+  image: {server_img}
+  ports:
+    - "${expose_port}:8080"
+    - 9345:9345
+  environment:
+    - DEFAULT_CATTLE_CATALOG_URL=library=${library_catalog}
+    - JAVA_OPTS="-Xmx${java_xmx}"
+  command:
+    - --db-host ${db_host}
+    - --db-user ${db_user}
+    - --db-pass ${db_pass}
+    - --advertise-address ${node_ip}
+    - --advertise-http-port ${expose_port}
+

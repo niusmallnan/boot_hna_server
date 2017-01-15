@@ -1,0 +1,12 @@
+#!/bin/bash
+set -ex
+
+server_img=ibuildthecloud/rancher:v1.2.2-h1 \
+java_xmx=28672m \
+expose_port= \
+library_catalog= \
+db_host= \
+db_user= \
+dh_pass= \
+node_ip=`ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'` \
+docker-compose up -d

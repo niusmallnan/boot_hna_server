@@ -4,6 +4,18 @@ set -ex
 #IP=`ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'`
 
 cattle_url='http://10.0.128.222:8082' \
-    service_account='service' \
-    service_pass='servicepass' \
+    service_account='service0' \
+    service_pass='service0pass' \
 docker-compose up -d
+
+
+#beancounter-server:
+  #image: imikushin/beancounter:v0.3.8
+  #command: [beancounter, server]
+  #extra_hosts:
+    #- "postgres:hna-caas-product-postgresql.cc8fqrm5ebkq.rds.cn-north-1.amazonaws.com.cn"
+    #- "influxdb:${influxdb}"
+  #environment:
+    #- CATTLE_URL=http://internal-hna-caas-product-rancher-lb-1754718600.cn-north-1.elb.amazonaws.com.cn:8082
+    #- CATTLE_ACCESS_KEY=service0
+    #- CATTLE_SECRET_KEY=service0pass
