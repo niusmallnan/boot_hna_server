@@ -1,5 +1,5 @@
 rancher:
-  image: {server_img}
+  image: ${server_img}
   restart: unless-stopped
   ports:
     - "${expose_port}:8080"
