@@ -12,6 +12,6 @@ for env in `$RANCHER env -a --format {{.ID}}`; do
     done
     if [ ! -z "$bc_service_id"  ]; then
         echo "env: $env, beancounter service: $bc_service_id"
-        $RANCHER restart $bc_service_id
+        $RANCHER --env ${env} restart $bc_service_id
     fi
 done
