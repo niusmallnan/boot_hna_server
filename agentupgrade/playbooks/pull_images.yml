@@ -1,0 +1,18 @@
+---
+#
+# ansible-playbook playbooks/pull_images.yml --extra-vars '{"pull_images": ["a", "b"]}'
+#
+
+- hosts: all
+  remote_user: ubuntu
+  sudo: yes
+
+  tasks:
+  - name: Pull docker image
+    shell: docker pull {{image}}
+    with_item:
+      - "{{pull_images}}"
+    loop_control:
+      loop_var: image
+      pause: 10
+
