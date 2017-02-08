@@ -10,7 +10,7 @@
   tasks:
   - name: Pull docker image
     shell: docker pull {{image}}
-    with_item:
+    with_items:
       - "{{pull_images}}"
     loop_control:
       loop_var: image
